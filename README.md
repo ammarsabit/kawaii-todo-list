@@ -4,8 +4,8 @@ This is a mini front-end project that showcases a cute and responsive to-do list
 
 ## 📸 Screenshot
 
-![Kawaii TodoList Screenshot](assets/Desktop-view.png.png)
-![Kawaii TodoList Screenshot](assets/mobile-view.png.png)
+![Kawaii TodoList Screenshot](/assets/Desktop-view.png.png)
+![Kawaii TodoList Screenshot](/assets/mobile-view.png.png)
 
 ## 💡 Features
 
