@@ -1,3 +1,21 @@
+.dynapuff-<uniquifier> {
+  font-family: "DynaPuff", system-ui;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('fonts/customfont.woff') format('woff'),
+       url('fonts/customfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 body {
   position: relative;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -5,13 +23,13 @@ body {
 }
 
 h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "DynaPuff", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; 
   color: #730002;
   font-weight: bold;
 }
 
 h3 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "CustomFont", sans-serif;
   color: #730002;
   font-weight: 700;
   margin-top: 2rem;
@@ -27,8 +45,8 @@ h3 {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   background-attachment: fixed;
-  height: 80vh;
-  width: 80vw;
+  height: 85vh;
+  width: 75vw;
   overflow-y: auto;
   flex-wrap: nowrap;
 }
@@ -42,6 +60,7 @@ h3 {
   flex-direction: column;
   width: 55%;
 }
+
 .box {
   display: flex;
   justify-content: space-between;
@@ -49,6 +68,7 @@ h3 {
   border-radius: 30px;
   padding: 0 2rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 button {
@@ -61,8 +81,11 @@ button:hover {
 }
 
 .icon {
-  width: 30px;
-  margin: 1vh 0;
+  width: 20px;
+  height: 20px;
+  margin: 1.3vh 0;
+  white-space: nowrap;
+  fill: white;
 }
 
 .bunny-bottom {
@@ -84,6 +107,7 @@ button:hover {
     top: 10vh;
     left: 5vw;
   }
+  
   .box {
     width: 75%;
   }
@@ -92,6 +116,8 @@ button:hover {
     width: 80%;
   }
   .icon {
-    width: 20px;
+    width: 10px;
+    margin: 2vh 0;
+
   }
 }
