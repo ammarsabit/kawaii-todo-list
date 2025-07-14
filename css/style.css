@@ -1,19 +1,17 @@
-.dynapuff-<uniquifier> {
+.dynapuff-<uniquifier > {
   font-family: "DynaPuff", system-ui;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 @font-face {
-  font-family: 'CustomFont';
-  src: url('fonts/customfont.woff') format('woff'),
-       url('fonts/customfont.ttf') format('truetype');
+  font-family: "CustomFont";
+  src: url("fonts/customfont.woff") format("woff"),
+    url("fonts/customfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-
 }
 
 body {
@@ -22,7 +20,8 @@ body {
 }
 
 h1 {
-  font-family: "DynaPuff", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; 
+  font-family: "DynaPuff", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
   color: #730002;
   font-weight: bold;
 }
@@ -51,14 +50,27 @@ h3 {
   flex-wrap: nowrap;
 }
 
-.ask {
-  width: 50%;
+form {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  margin: 0.4rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type='text'] {
+  background-color: rgba(253, 212, 213, 0);
+  border: 0;
+  width: 100%;
+}
+
+input[type='text']:focus {
+  outline: 0;
 }
 
 .tasks {
   display: flex;
   flex-direction: column;
-  width: 55%;
 }
 
 .box {
@@ -68,7 +80,7 @@ h3 {
   border-radius: 30px;
   padding: 0 2rem;
   margin-bottom: 0.5rem;
-  text-align: center;
+  width: 30vw;
 }
 
 button {
@@ -82,12 +94,15 @@ button:hover {
 
 .icon-container {
   text-wrap: nowrap;
+  align-self: center;
 }
+
 .icon {
   width: 20px;
   height: 20px;
   margin: 1.3vh 0;
-  fill: white;
+  fill: black;
+  cursor: onfocus;
 }
 
 .bunny-bottom {
@@ -104,23 +119,23 @@ button:hover {
   z-index: -1;
 }
 
+
 @media screen and (max-width: 650px) {
   .bunny-side {
     width: 300px;
     top: 10vh;
     left: 5vw;
   }
-  
+
   .box {
     width: 75%;
   }
 
-  .tasks{
+  .tasks {
     width: 80%;
   }
   .icon {
     width: 10px;
     margin: 2vh 0;
-
   }
 }

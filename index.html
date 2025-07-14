@@ -12,26 +12,26 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="todolist">
       <h1>Kawaii TodoList</h1>
 
-      <div class="box ask">
-        <p>Add Your Task</p>
-        <button>
+      <form action="add-task" class="box">
+        <input type="text" placeholder="Add new task" />
+        <button id="add-element">
           <svg class="icon">
             <use href="/assets/plus-solid.svg"></use>
           </svg>
         </button>
-      </div>
+      </form>
 
       <h3>Tasks added successfully</h3>
 
       <div class="tasks">
         <span class="box">
+          <input type="radio" class="checkbox" />
           <p>Go to market</p>
           <span class="icon-container">
             <button>
