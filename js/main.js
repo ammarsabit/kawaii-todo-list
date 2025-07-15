@@ -1,11 +1,20 @@
 const inputBox = document.getElementById("input-box");
 const addTask = document.getElementById("add-task");
 const addedTasks = document.getElementById("added-tasks");
-const completedTasks = document.getElementById("completed-tasks")
+const completedTasks = document.getElementById("completed-tasks");
+const countcompletedTasks = document.getElementById("count-completed");
+
+// update completed task count
+
+function updateCompletedCount() {
+  const completedCount = completedTasks.querySelectorAll('li').length;
+  countcompletedTasks.textContent = ` (${completedCount})`
+}
 
 // Add New Tasks
 
 addTask.onclick = addNewTask;
+
 
 function addNewTask(event) {
   event.preventDefault();
@@ -33,12 +42,13 @@ function addNewTask(event) {
 // Remove and mark as completed existing tasks
 
 addedTasks.addEventListener("click", function (event) {
-  const removeBtn = event.target.closest('.remove-task')
-  const completedBtn = event.target.closest('.task')
+  const removeBtn = event.target.closest(".remove-task");
+  const markCompleted = event.target.closest(".task");
 
-  if (completedBtn) {
-    completedTasks.appendChild(completedBtn.parentNode)
-    completedBtn.classList.toggle("task-done")
+  if (markCompleted) {
+    completedTasks.appendChild(markCompleted.parentNode);
+    markCompleted.classList.toggle("task-done");
+    updateCompletedCount()
   }
 
   if (removeBtn) {
@@ -49,18 +59,18 @@ addedTasks.addEventListener("click", function (event) {
 // Completed task tab
 
 completedTasks.addEventListener("click", function (event) {
-  const removeBtn = event.target.closest('.remove-task')
-  const completedBtn = event.target.closest('.task')
+  const removeBtn = event.target.closest(".remove-task");
+  const uncomplete = event.target.closest(".task");
 
-  if (completedBtn) {
-    addedTasks.appendChild(completedBtn.parentNode)
-    completedBtn.classList.toggle("task-done")
+  
+  if (uncomplete) {
+    addedTasks.appendChild(uncomplete.parentNode);
+    uncomplete.classList.toggle("task-done");
+    updateCompletedCount()
   }
 
   if (removeBtn) {
     removeBtn.parentNode.remove();
+    updateCompletedCount()
   }
-
-})
-
-
+});

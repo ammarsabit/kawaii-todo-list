@@ -59,7 +59,7 @@ button:hover {
 svg {
   width: 20px;
   height: 20px;
-  fill: black;
+  fill: #730002;
   cursor: pointer;
   align-self: center;
   margin-right: 10px;
@@ -124,10 +124,7 @@ li {
   display: flex;
   justify-content: space-between;
   list-style: none;
-  background-color: var(--box-color);
-  border-radius: 30px;
-  padding: 0.5rem 1.5rem;
-  margin-bottom: 0.2rem;
+  margin: 0.4rem;
   user-select: none;
   flex-wrap: wrap;
 }
@@ -159,6 +156,8 @@ li {
   overflow-y: auto;
   width: var(--box-width);
   max-height: 30%;
+  background-color: var(--box-color);
+  border-radius: 10px;
 }
 
 
