@@ -17,6 +17,8 @@
 :root {
   --box-width: 40vw;
   --box-color: rgba(253, 212, 213, 0.8);
+  --container-width: 80vw;
+  --container-height: 90vh;
 }
 *,
 *::before,
@@ -30,6 +32,7 @@ html {
 
 body {
   background-color: rgb(177, 98, 111);
+  padding: auto;
 }
 
 h1 {
@@ -62,9 +65,7 @@ svg {
   fill: #730002;
   cursor: pointer;
   align-self: center;
-  margin-right: 10px;
   background-color: transparent;
-
 }
 
 .icon-container {
@@ -78,15 +79,16 @@ svg {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 5vh;
-  left: 15vw;
+  top: calc((100vh - var(--container-height)) / 2);
+  left: calc((100vw - var(--container-width)) / 2);
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   background-attachment: fixed;
-  height: 90vh;
-  width: 70vw;
-  padding: 1rem 5rem;
+  height: var(--container-height);
+  width: var(--container-width);
+  padding: 0.1rem;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 form {
@@ -128,12 +130,11 @@ li {
   list-style: none;
   margin: 0.4rem;
   user-select: none;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .task-done {
   text-decoration: line-through;
-  text-align: center;
   color: grey;
 }
 
@@ -151,15 +152,20 @@ li {
   background: url(../assets/check-solid.svg);
 }
 
-
 .task-container {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   width: var(--box-width);
+  min-height: 30px;
   max-height: 30%;
   background-color: var(--box-color);
   border-radius: 10px;
+  padding: 0.11rem 0.5rem;
+}
+
+ul {
+  padding: 0;
 }
 
 .toggler {
@@ -171,7 +177,7 @@ li {
 }
 
 .collapsible--expanded {
-  display: block;
+  display: flex;
 }
 
 .toggler-expanded {
@@ -184,7 +190,6 @@ li {
   width: 30vw;
   border-radius: 30px;
 }
-
 
 @media screen and (max-width: 650px) {
   .bunny-side {
@@ -201,5 +206,11 @@ li {
     width: 10px;
     margin: 2vh 0;
     vertical-align: center;
+  }
+
+  :root {
+    --container-width: 90vw;
+    --container-height: 95vh;
+    --box-width: 70vw;
   }
 }
