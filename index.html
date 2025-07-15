@@ -4,95 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo List</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="todolist">
+    <div class="container">
       <h1>Kawaii TodoList</h1>
-
-      <form action="add-task" class="box">
-        <input type="text" placeholder="Add new task" />
-        <button id="add-element">
+      <form action="">
+        <input type="text" placeholder="Add new task" id="input-box" />
+        <button id="add-task">
           <svg class="icon">
             <use href="/assets/plus-solid.svg"></use>
           </svg>
         </button>
       </form>
-
       <h3>Tasks added successfully</h3>
-
-      <div class="tasks">
-        <span class="box">
-          <input type="radio" class="checkbox" />
-          <p>Go to market</p>
-          <span class="icon-container">
-            <button>
-              <svg class="icon">
-                <use href="/assets/pen-clip-solid.svg"></use>
-              </svg>
-            </button>
-            <button>
-              <svg class="icon">
-                <use href="/assets/xmark-solid.svg"></use>
-              </svg>
-            </button>
-          </span>
-        </span>
-        <span class="box">
-          <p>To Practice code</p>
-          <span class="icon-container">
-            <button>
-              <svg class="icon">
-                <use href="/assets/pen-clip-solid.svg"></use>
-              </svg>
-            </button>
-            <button>
-              <svg class="icon">
-                <use href="/assets/xmark-solid.svg"></use>
-              </svg>
-            </button>
-          </span>
-        </span>
-        <span class="box">
-          <p>To learn new hadith</p>
-          <span class="icon-container">
-            <button>
-              <svg class="icon">
-                <use href="/assets/pen-clip-solid.svg"></use>
-              </svg>
-            </button>
-            <button>
-              <svg class="icon">
-                <use href="/assets/xmark-solid.svg"></use>
-              </svg>
-            </button>
-          </span>
-        </span>
-        <span class="box">
-          <p>To learn arabic</p>
-          <span class="icon-container">
-            <button>
-              <svg class="icon">
-                <use href="/assets/pen-clip-solid.svg"></use>
-              </svg>
-            </button>
-            <button>
-              <svg class="icon">
-                <use href="/assets/xmark-solid.svg"></use>
-              </svg>
-            </button>
-          </span>
-        </span>
-      </div>
-
+      <ul id="task-container">
+      </ul>
       <img src="assets/1.png" alt="" class="bunny-bottom" />
       <img src="assets/4.png" alt="" class="bunny-side" />
     </div>

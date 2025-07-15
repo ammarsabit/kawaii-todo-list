@@ -14,8 +14,21 @@
   font-style: normal;
 }
 
-body {
+:root {
+  --box-width: 40vw;
+  --box-color: rgba(253, 212, 213, 0.8);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
   background-color: rgb(177, 98, 111);
 }
 
@@ -30,57 +43,7 @@ h3 {
   font-family: "CustomFont", sans-serif;
   color: #730002;
   font-weight: 700;
-  margin-top: 2rem;
-}
-
-.todolist {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 10vh;
-  left: 10vw;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 30px;
-  background-attachment: fixed;
-  height: 85vh;
-  width: 75vw;
-  overflow-y: auto;
-  flex-wrap: nowrap;
-}
-
-form {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0.5rem 0.7rem;
-  margin: 0.4rem;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-
-input[type='text'] {
-  background-color: rgba(253, 212, 213, 0);
-  border: 0;
-  width: 100%;
-}
-
-input[type='text']:focus {
-  outline: 0;
-}
-
-.tasks {
-  display: flex;
-  flex-direction: column;
-}
-
-.box {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(253, 212, 213, 0.8);
-  border-radius: 30px;
-  padding: 0 2rem;
-  margin-bottom: 0.5rem;
-  width: 30vw;
+  margin-bottom: 2px;
 }
 
 button {
@@ -90,19 +53,49 @@ button {
 
 button:hover {
   background-color: rgba(255, 192, 203, 0.5);
-}
-
-.icon-container {
-  text-wrap: nowrap;
-  align-self: center;
+  border-radius: 20px;
 }
 
 .icon {
   width: 20px;
   height: 20px;
-  margin: 1.3vh 0;
   fill: black;
-  cursor: onfocus;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  background-attachment: fixed;
+  height: 80vh;
+  width: 70vw;
+  padding: 3rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--box-color);
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  width: var(--box-width);
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  outline: 0;
 }
 
 .bunny-bottom {
@@ -119,6 +112,30 @@ button:hover {
   z-index: -1;
 }
 
+li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  background-color: var(--box-color);
+  border-radius: 30px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  user-select: none;
+  flex-wrap: wrap;
+
+}
+
+#task-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: var(--box-width);
+}
+
+.icon-container {
+  text-wrap: nowrap;
+  align-self: center;
+}
 
 @media screen and (max-width: 650px) {
   .bunny-side {
@@ -131,9 +148,6 @@ button:hover {
     width: 75%;
   }
 
-  .tasks {
-    width: 80%;
-  }
   .icon {
     width: 10px;
     margin: 2vh 0;
