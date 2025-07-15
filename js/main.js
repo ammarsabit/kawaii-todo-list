@@ -1,10 +1,23 @@
 const inputBox = document.getElementById("input-box");
 const addTask = document.getElementById("add-task");
-const taskContainer = document.getElementById("task-container");
-const radio = document.querySelectorAll('input[type="radio"]');
-console.log(radio)
+const addedTasks = document.getElementById("added-tasks");
+
 addTask.onclick = addNewTask;
- 
+
+addedTasks.addEventListener("click", function (event) {
+  const removeBtn = event.target.closest('.remove-task')
+  const completedBtn = event.target.closest('.task')
+
+  if (completedBtn) {
+    completedBtn.classList.toggle("task-done")
+  }
+
+  if (removeBtn) {
+    removeBtn.parentNode.remove();
+  }
+});
+
+
 function addNewTask(event) {
   event.preventDefault();
   if (inputBox.value.trim() === "") {
@@ -12,26 +25,18 @@ function addNewTask(event) {
     return;
   }
 
-  let li = document.createElement("li");
+  const li = document.createElement("li");
   li.innerHTML = `
-          <span>
-            <input type="radio" />
+          <span class = "task">
             ${inputBox.value}
           </span>
-          <span class="icon-container">
-            <button>
-              <svg class="icon">
-                <use href="/assets/pen-clip-solid.svg"></use>
-              </svg>
-            </button>
-            <button>
-              <svg class="icon">
-                <use href="/assets/xmark-solid.svg"></use>
-              </svg>
-            </button>
-          </span>
+          <button class="remove-task">
+            <svg>
+              <use href="/assets/xmark-solid.svg"></use>
+            </svg>
+          </button>
         `;
-  taskContainer.appendChild(li);
+  addedTasks.appendChild(li);
 
-  inputBox.value = '';
+  inputBox.value = "";
 }

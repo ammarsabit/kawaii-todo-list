@@ -56,11 +56,18 @@ button:hover {
   border-radius: 20px;
 }
 
-.icon {
+svg {
   width: 20px;
   height: 20px;
   fill: black;
   cursor: pointer;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.icon-container {
+  text-wrap: nowrap;
+  margin: 0;
 }
 
 .container {
@@ -69,12 +76,12 @@ button:hover {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 10vh;
+  /* top: 10vh; */
   left: 15vw;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   background-attachment: fixed;
-  height: 80vh;
+  height: 100vh;
   width: 70vw;
   padding: 3rem;
 }
@@ -122,20 +129,39 @@ li {
   margin: 0.5rem 0;
   user-select: none;
   flex-wrap: wrap;
-
 }
 
-#task-container {
+.task-done {
+  text-decoration: line-through;
+  text-align: center;
+  color: grey;
+}
+
+.task::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url("/assets/circle-regular.svg") no-repeat center center;
+  background-size: contain;
+  margin-right: 0.5em;
+}
+
+.task-done::before {
+  background: url(../assets/check-solid.svg);
+}
+
+
+.task-container {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   width: var(--box-width);
 }
 
-.icon-container {
-  text-wrap: nowrap;
-  align-self: center;
-}
+
+
+
 
 @media screen and (max-width: 650px) {
   .bunny-side {
@@ -151,5 +177,6 @@ li {
   .icon {
     width: 10px;
     margin: 2vh 0;
+    vertical-align: center;
   }
 }
