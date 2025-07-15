@@ -3,18 +3,21 @@ const addTask = document.getElementById("add-task");
 const addedTasks = document.getElementById("added-tasks");
 const completedTasks = document.getElementById("completed-tasks");
 const countcompletedTasks = document.getElementById("count-completed");
+const collapsible = document.querySelector(".collapsible");
+const collapsibleContent = document.querySelector(".collapsible--content");
+const toggler = document.querySelector('.toggler')
+
 
 // update completed task count
 
 function updateCompletedCount() {
-  const completedCount = completedTasks.querySelectorAll('li').length;
-  countcompletedTasks.textContent = ` (${completedCount})`
+  const completedCount = completedTasks.querySelectorAll("li").length;
+  countcompletedTasks.textContent = ` (${completedCount})`;
 }
 
 // Add New Tasks
 
 addTask.onclick = addNewTask;
-
 
 function addNewTask(event) {
   event.preventDefault();
@@ -48,7 +51,7 @@ addedTasks.addEventListener("click", function (event) {
   if (markCompleted) {
     completedTasks.appendChild(markCompleted.parentNode);
     markCompleted.classList.toggle("task-done");
-    updateCompletedCount()
+    updateCompletedCount();
   }
 
   if (removeBtn) {
@@ -62,15 +65,21 @@ completedTasks.addEventListener("click", function (event) {
   const removeBtn = event.target.closest(".remove-task");
   const uncomplete = event.target.closest(".task");
 
-  
   if (uncomplete) {
     addedTasks.appendChild(uncomplete.parentNode);
     uncomplete.classList.toggle("task-done");
-    updateCompletedCount()
+    updateCompletedCount();
   }
 
   if (removeBtn) {
     removeBtn.parentNode.remove();
-    updateCompletedCount()
+    updateCompletedCount();
   }
+});
+
+// collapsible
+
+collapsible.addEventListener("click", function (event) {
+  completedTasks.classList.toggle("collapsible--expanded");
+  collapsible.lastElementChild.classList.toggle("toggler-expanded")
 });

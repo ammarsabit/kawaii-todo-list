@@ -63,6 +63,8 @@ svg {
   cursor: pointer;
   align-self: center;
   margin-right: 10px;
+  background-color: transparent;
+
 }
 
 .icon-container {
@@ -158,6 +160,29 @@ li {
   max-height: 30%;
   background-color: var(--box-color);
   border-radius: 10px;
+}
+
+.toggler {
+  transition: transform 1.15s;
+}
+
+.collapsible--content {
+  display: none;
+}
+
+.collapsible--expanded {
+  display: block;
+}
+
+.toggler-expanded {
+  transform: rotate(180deg);
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+  border-radius: 30px;
 }
 
 
