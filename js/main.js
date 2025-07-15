@@ -5,8 +5,7 @@ const completedTasks = document.getElementById("completed-tasks");
 const countcompletedTasks = document.getElementById("count-completed");
 const collapsible = document.querySelector(".collapsible");
 const collapsibleContent = document.querySelector(".collapsible--content");
-const toggler = document.querySelector('.toggler')
-
+const toggler = document.querySelector(".toggler");
 
 // update completed task count
 
@@ -33,13 +32,14 @@ function addNewTask(event) {
           </span>
           <button class="remove-task">
             <svg>
-              <use href="/assets/xmark-solid.svg"></use>
+              <use href="/assets/svg-sprite.svg#icon-xmark-solid"></use>
             </svg>
           </button>
         `;
   addedTasks.appendChild(li);
 
   inputBox.value = "";
+  saveAddedTasks();
 }
 
 // Remove and mark as completed existing tasks
@@ -51,11 +51,14 @@ addedTasks.addEventListener("click", function (event) {
   if (markCompleted) {
     completedTasks.appendChild(markCompleted.parentNode);
     markCompleted.classList.toggle("task-done");
-    updateCompletedCount();
+    saveAddedTasks();
+    saveCompletedTasks()
   }
 
   if (removeBtn) {
     removeBtn.parentNode.remove();
+    saveAddedTasks();
+    saveCompletedTasks();
   }
 });
 
@@ -69,11 +72,15 @@ completedTasks.addEventListener("click", function (event) {
     addedTasks.appendChild(uncomplete.parentNode);
     uncomplete.classList.toggle("task-done");
     updateCompletedCount();
+    saveAddedTasks();
+    saveCompletedTasks();
   }
 
   if (removeBtn) {
     removeBtn.parentNode.remove();
     updateCompletedCount();
+    saveAddedTasks();
+    saveCompletedTasks()
   }
 });
 
@@ -81,5 +88,22 @@ completedTasks.addEventListener("click", function (event) {
 
 collapsible.addEventListener("click", function (event) {
   completedTasks.classList.toggle("collapsible--expanded");
-  collapsible.lastElementChild.classList.toggle("toggler-expanded")
+  collapsible.lastElementChild.classList.toggle("toggler-expanded");
 });
+
+// Store on local storage
+
+function saveAddedTasks() {
+  localStorage.setItem("addedTasks", addedTasks.innerHTML);
+}
+
+function saveCompletedTasks() {
+  localStorage.setItem("completedTasks", completedTasks.innerHTML);
+}
+
+function retriveData() {
+  addedTasks.innerHTML = localStorage.getItem("addedTasks");
+  completedTasks.innerHTML = localStorage.getItem("completedTasks");
+}
+
+retriveData();

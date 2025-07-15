@@ -19,24 +19,21 @@
         <input type="text" placeholder="Add new task" id="input-box" />
         <button id="add-task">
           <svg>
-            <use href="/assets/plus-solid.svg"></use>
+            <use href="/assets/svg-sprite.svg#icon-plus-solid"></use>
           </svg>
         </button>
       </form>
       <h3>Tasks added successfully</h3>
       <ul id="added-tasks" class="task-container"></ul>
-      <img src="assets/1.png" alt="" class="bunny-bottom" />
-      <img src="assets/4.png" alt="" class="bunny-side" />
-        <span class="box Completed collapsible">
-          <h3>Completed Tasks <span id="count-completed"></span></h3>
-          <svg class="toggler">
-            <use href="/assets/check-double-solid.svg"></use>
-          </svg>
-        </span>
-        <ul
-          id="completed-tasks"
-          class="task-container collapsible--content"
-        ></ul>
+      <img src="assets/little_bunney.png" alt="" class="bunny-bottom" />
+      <img src="assets/big_bunney.png" alt="" class="bunny-side" />
+      <span class="box Completed collapsible">
+        <h3>Completed Tasks <span id="count-completed"></span></h3>
+        <svg class="toggler">
+          <use href="/assets/svg-sprite.svg#icon-chevron"></use>
+        </svg>
+      </span>
+      <ul id="completed-tasks" class="task-container collapsible--content"></ul>
     </div>
     <script src="js/main.js"></script>
   </body>

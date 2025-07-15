@@ -6,13 +6,6 @@
   font-variation-settings: "wdth" 100;
 }
 
-@font-face {
-  font-family: "CustomFont";
-  src: url("fonts/customfont.woff") format("woff"),
-    url("fonts/customfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
 
 :root {
   --box-width: 40vw;
