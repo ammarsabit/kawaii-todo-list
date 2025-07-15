@@ -12,6 +12,7 @@ const toggler = document.querySelector(".toggler");
 function updateCompletedCount() {
   const completedCount = completedTasks.querySelectorAll("li").length;
   countcompletedTasks.textContent = ` (${completedCount})`;
+  saveCompletedTasks();
 }
 
 // Add New Tasks
@@ -51,8 +52,9 @@ addedTasks.addEventListener("click", function (event) {
   if (markCompleted) {
     completedTasks.appendChild(markCompleted.parentNode);
     markCompleted.classList.toggle("task-done");
+    updateCompletedCount();
     saveAddedTasks();
-    saveCompletedTasks()
+    saveCompletedTasks();
   }
 
   if (removeBtn) {

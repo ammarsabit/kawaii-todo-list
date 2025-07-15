@@ -1,23 +1,77 @@
-# 🐰 Kawaii TodoList (Design Only)
+# 🐰 Kawaii TodoList — Fully Functional Version
 
-This is a mini front-end project that showcases a cute and responsive to-do list interface built with **HTML** and **CSS** only. The design features a soft, pastel-colored theme with kawaii-style bunny illustrations, rounded elements, and intuitive icons for task actions. Although it doesn’t include functionality with JavaScript yet, the layout is structured in a way that it can be easily extended in the future.
+A cute, responsive, and now fully interactive Todo List web app built with **HTML**, **CSS**, and **JavaScript**. Inspired by soft pastel aesthetics and kawaii visuals, this project allows users to add, complete, and remove tasks — all stored in the browser using **localStorage**.
 
-## 📸 Screenshot
+---
 
-![Kawaii TodoList Screenshot](assets/Desktop-view.png)
-![Kawaii TodoList Screenshot](assets/mobile-view.png)
+## 🎯 Features
 
-## 💡 Features
+- ✅ Add new tasks
+- 🎯 Mark tasks as completed (with line-through and checkmark)
+- ♻️ Move tasks back to the active list from completed
+- 🗑️ Remove tasks from both lists
+- 💾 Saves tasks across sessions using localStorage
+- 📱 Fully responsive (mobile-friendly)
+- 🐇 Cute bunny theme + SVG icons from sprite sheets
 
-- Clean and minimal HTML structure
-- Soft, pastel-themed CSS styling
-- Edit and delete icons (using FontAwesome)
-- Responsive layout with media queries
-- Cute bunny background elements for aesthetics
+---
+
+## 🖼️ Screenshots
+
+
+| Desktop View | Mobile View |
+|--------------|-------------|
+| ![Desktop View](assets/screenshots/Desktop-view-1.png) | ![Mobile View](assets/screenshots/Mobile-view-1.png) |
+
+| Adding a Task | Completed Tasks Tab |
+|---------------|---------------------|
+| ![Adding](assets/screenshots/Desktop-view-2.png) | ![Completed](assets/screenshots/Mobile-view-2.png) |
+
+---
+
+## 🛠️ Built With
+
+- **HTML5** – semantic and accessible structure
+- **CSS3** – responsive design, flexbox, and media queries
+- **JavaScript** – DOM manipulation, event delegation, localStorage
+- **SVG Sprites** – used for icons like add, delete, and check
+- **Google Fonts** – custom typography with DynaPuff
+
+---
 
 ## 🧠 What I Learned
 
-- Building the base layout and styling task elements with **Flexbox** and **semantic HTML** was straightforward and enjoyable.
-- The **most challenging part** was making the design responsive—especially managing the absolute positioning of the decorative bunny images and ensuring consistent alignment across different screen sizes.
-- I overcame layout issues by using `vh`, `vw`, `%` units and `media queries`, and refined the look by balancing positioning with layering using `z-index`.
+- Building interactivity with **vanilla JavaScript** — including DOM events, localStorage, and toggling classes dynamically.
+- Managing tasks between active and completed states while maintaining a clean user experience.
+- Improving my understanding of **event delegation** and **closest()**, especially when dealing with dynamic elements.
+- Structuring reusable SVG icons using **sprite-based references** with `<use>`, which kept my assets light and scalable.
+
+---
+
+## 📂 Folder Structure
+
+📁 assets/
+├─ svg-sprite.svg
+├─ big_bunney.png
+├─ little_bunney.png
+└─ screenshots/
+├─ desktop-1.png
+├─ mobile-1.png
+├─ adding-task.png
+└─ completed-tasks.png
+
+📁 css/
+└─ style.css
+
+📁 js/
+└─ main.js
+
+📄 index.html
+
+## 🚀 Getting Started
+
+1. Clone the repository  
+   git clone https://github.com/ammarsabit/kawaii-todo-list.git
+2. Open index.html in your browser
+3. That's it! Tasks you add will persist using localStorage
 

@@ -1,11 +1,10 @@
-.dynapuff-<uniquifier > {
+.dynapuff-custom {
   font-family: "DynaPuff", system-ui;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 700;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
-
 
 :root {
   --box-width: 40vw;
@@ -25,7 +24,6 @@ html {
 
 body {
   background-color: rgb(177, 98, 111);
-  padding: auto;
 }
 
 h1 {
