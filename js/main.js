@@ -1,22 +1,11 @@
 const inputBox = document.getElementById("input-box");
 const addTask = document.getElementById("add-task");
 const addedTasks = document.getElementById("added-tasks");
+const completedTasks = document.getElementById("completed-tasks")
+
+// Add New Tasks
 
 addTask.onclick = addNewTask;
-
-addedTasks.addEventListener("click", function (event) {
-  const removeBtn = event.target.closest('.remove-task')
-  const completedBtn = event.target.closest('.task')
-
-  if (completedBtn) {
-    completedBtn.classList.toggle("task-done")
-  }
-
-  if (removeBtn) {
-    removeBtn.parentNode.remove();
-  }
-});
-
 
 function addNewTask(event) {
   event.preventDefault();
@@ -40,3 +29,38 @@ function addNewTask(event) {
 
   inputBox.value = "";
 }
+
+// Remove and mark as completed existing tasks
+
+addedTasks.addEventListener("click", function (event) {
+  const removeBtn = event.target.closest('.remove-task')
+  const completedBtn = event.target.closest('.task')
+
+  if (completedBtn) {
+    completedTasks.appendChild(completedBtn.parentNode)
+    completedBtn.classList.toggle("task-done")
+  }
+
+  if (removeBtn) {
+    removeBtn.parentNode.remove();
+  }
+});
+
+// Completed task tab
+
+completedTasks.addEventListener("click", function (event) {
+  const removeBtn = event.target.closest('.remove-task')
+  const completedBtn = event.target.closest('.task')
+
+  if (completedBtn) {
+    addedTasks.appendChild(completedBtn.parentNode)
+    completedBtn.classList.toggle("task-done")
+  }
+
+  if (removeBtn) {
+    removeBtn.parentNode.remove();
+  }
+
+})
+
+
